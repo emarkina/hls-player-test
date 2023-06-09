@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <main class="main-container">
+        <div class="container player">
+            <video class="player-video" id="video"></video>
+            <div class="player-control-rewind">
+                <input class="rewind" type="range" value="0" step="any" min="0" max="1000">
+            </div>
+            <div class="player-control-panel">
+                <div class="player-control-group">
+                    <button class="player-control playpause">
+                        <i class="bi bi-play"></i>
+                    </button>
+                    <span class="player-control-time">
+                        <span class="time-current"></span>&nbsp;/&nbsp;<span class="time-total"></span>
+                    </span>
+                </div>
+                <div class="player-control-group">
+                    <button class="player-control subtitle" onclick="toggleSubtitle()">
+                        <i class="bi bi-card-text"></i>
+                    </button>
+                    <button class="player-control fullscreen" onclick="toggleFullscreen()">
+                        <i class="bi bi-fullscreen"></i>
+                    </button>
+                    <button class="player-control pip" onclick="togglePip()">
+                        <i class="bi bi-pip"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <div class="container stats">
+            <h3>Stats</h3>
+            <div class="player-statistic">
+                <span>Buffered time: </span><span class="buffer-current"></span>
+            </div>
+            <div class="player-statistic">
+                <span>Levels #: </span><span class="stats-levels"></span>
+            </div>
+            <div class="player-statistic">
+                <span>Audio #: </span><span class="stats-audio"></span>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
